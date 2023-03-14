@@ -5,9 +5,11 @@ body{
     justify-content: center;
     align-items: center;
 
+    height: 100vh;
+
     padding: 5vw;
 
-    background-color: var(--btn-color);
+    background: linear-gradient(45deg, var(--btn-color) 50%, var(--btn-press));
 }
 
 .conteiner.rotom{
@@ -61,7 +63,7 @@ body{
     color: var(--btn-text);
     background-color: var(--btn-color);
 }
-.btn-top:hover{
+.btn-top:active{
     height: 20px;
     width: 140px;
 
@@ -90,7 +92,6 @@ body{
     min-height: 100%;
     width: 100%;
 }
-
 .display-center{
     display: flex;
     justify-content: center;
@@ -104,7 +105,6 @@ body{
 
     background-image: linear-gradient( to right, var(--display-color), var(--txt-color) );
 }
-
 .display-show{
     display: flex;
     position: relative;
@@ -119,7 +119,6 @@ body{
     opacity: .8;
     background-color: var(--display-color);
 }
-
 .btn{
     display: flex;
     justify-content: center;
@@ -141,7 +140,7 @@ body{
     color: var(--btn-text);
     background-color: var(--btn-color);
 }
-.btn:hover{
+.btn:active{
     background-color: var(--btn-press);
     border: 2px inset var(--btn-border);    
 }

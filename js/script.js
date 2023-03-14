@@ -1,4 +1,3 @@
-
 const divConteiner = document.querySelector('.display-show');
 const btnPrev = document.getElementById('prev');
 const btnNext = document.getElementById('next');
@@ -13,6 +12,10 @@ btnPrev.addEventListener('click', (event)=>{
     event.stopPropagation();
     event.preventDefault();
     pokeId -=1;
+    const pokeMinimum=1;
+    if(pokeId<=pokeMinimum){
+        pokeId=1008;
+    }
     divConteiner.innerHTML="";
     listPoke(pokeId);
 });
@@ -21,6 +24,10 @@ btnNext.addEventListener('click', (event)=>{
     event.stopPropagation();
     event.preventDefault();
     pokeId += 1;
+    const pokeMaximum = 1009;
+    if(pokeId>=pokeMaximum){
+        pokeId=1;
+    }
     divConteiner.innerHTML="";
     listPoke(pokeId)
 });
@@ -51,12 +58,11 @@ input.addEventListener('keyup', (event)=>{
 async function listPoke (pokemonPosition){
     try {       
         const pokeData = await instance.get(`pokemon/${pokemonPosition}`);
-        //console.log(pokeData.data.abilities[0].ability.name);
         pokeId=pokeData.data.id;
-        console.log(pokeId);
         pokemonRender(pokeData);
     } catch (error) {
-        console.log(error);
+        errorSearch();
+        input.value = "";
     }
 }
 
@@ -74,5 +80,15 @@ function pokemonRender (pokeData){
         <div id='side-right-data'>
             <img id='picture-card' src='${pokeData.data.sprites.front_default}'>    
         </div>
+    `
+}
+
+function errorSearch(){
+    divConteiner.innerHTML +=
+    `
+    <div id='msg-error'>
+        <h1><span>Error 404</span> - uncataloged or non-existent creature</h1>
+        <p>press the <span>reset button</span> or refresh the page</p>
+    </div>
     `
 }
