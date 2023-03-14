@@ -12,7 +12,7 @@ btnPrev.addEventListener('click', (event)=>{
     event.stopPropagation();
     event.preventDefault();
     pokeId -=1;
-    const pokeMinimum=1;
+    const pokeMinimum=0;
     if(pokeId<=pokeMinimum){
         pokeId=1008;
     }
