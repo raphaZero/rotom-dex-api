@@ -3,8 +3,8 @@
     --display-color: #eee6ee;
     --border-color: #837b9c;
 
-    --btn-press: #9441bd;
-    --btn-color: #6a319c;
+    --btn-color: #9441bd;
+    --btn-press: #6a319c;
     --btn-border:#392052;
     --btn-text: #ffffff;
 
@@ -16,5 +16,5 @@
     padding: 0;
     box-sizing: border-box;
 
-    font-family: 'Varela Round', sans-serif;;
+    font-family: 'Varela Round', sans-serif;
 }

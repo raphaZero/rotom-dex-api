@@ -1,0 +1,21 @@
+#side-left-data, #side-right-data{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    width: 50%;
+    height: 100%;
+}
+#poke-name, #poke-id{
+    text-transform: capitalize;
+
+    color: var(--txt-color);
+}
+p{
+    color: var(--txt-color);
+    text-align: left;
+}
+#picture-card{
+    height: 100%;
+}
